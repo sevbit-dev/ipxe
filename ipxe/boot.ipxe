@@ -2,9 +2,12 @@
 
 :start
 echo Welcome to basic iPXE
-echo >sleep 3 seconds...
-sleep 3
-dhcp
+echo >sleep 5 seconds...
+sleep 5
+
+dhcp && goto next || prompt --key s --timeout 1500 Press "s" for the iPXE command line... && shell || goto start
+
+:next
 chain tftp://${next-server}/boot.ipxe || goto shell
 
 :shell
