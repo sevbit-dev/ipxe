@@ -5,7 +5,7 @@ sudo apt-get install -y make gcc binutils perl git zip mtools genisoimage syslin
 src_dir=$(pwd)
 mkdir -p ./build && cd ./build
 [ -d ./ipxe ] && rm -r ./ipxe
-git clone git://git.ipxe.org/ipxe.git
+git clone https://github.com/ipxe/ipxe.git
 cd ipxe/src/
 mkdir -p ${src_dir}/dist
 cp ${src_dir}/boot.ipxe ./
