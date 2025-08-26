@@ -1,5 +1,6 @@
 name: Build iPXE
 on:
+  workflow_dispatch:
   push:
     paths:
       - 'ipxe/**'
@@ -8,7 +9,7 @@ on:
 permissions:
   contents: write
 jobs:
-  build_cloudseed:
+  build_ipxe:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
