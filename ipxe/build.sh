@@ -17,4 +17,7 @@ sed -i '/PING_CMD/s/\/\///g' ./config/general.h
 sed -i '/VLAN_CMD/s/\/\///g' ./config/general.h
 make bin/ipxe.pxe bin/undionly.kpxe bin/undionly.kkpxe bin/undionly.kkkpxe bin-x86_64-efi/ipxe.efi EMBED=boot.ipxe
 make bin/ipxe.iso EMBED=iso.ipxe
-cp -v bin/{ipxe.pxe,ipxe.iso,undionly.kpxe,undionly.kkpxe,undionly.kkkpxe} bin-x86_64-efi/ipxe.efi ${src_dir}/dist
+make bin-x86_64-efi/ipxe.iso EMBED=iso.ipxe
+cp -v bin/{ipxe.pxe,undionly.kpxe,undionly.kkpxe,undionly.kkkpxe} bin-x86_64-efi/ipxe.efi ${src_dir}/dist
+cp -v bin/ipxe.iso ${src_dir}/dist/ipxe_bios.iso
+cp -v bin-x86_64-efi/ipxe.iso ${src_dir}/dist/ipxe_efi.iso
